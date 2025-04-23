@@ -5,15 +5,42 @@ using System.Runtime.CompilerServices;
 namespace Exercise02 {
     class Program {
         static void Main(string[] args) {
-            PrintInchToMeterList(1, 10);
-        }
 
-        static void PrintInchToMeterList(int start, int end) {
-            for (int feet = start; feet <= end; feet++) {
-                double meter = IntchConverter.ToMeter(feet);
-                Console.WriteLine($"{feet}inch = {meter:0.0000}m");
+            Console.WriteLine("1:インチからメートル");
+            Console.WriteLine("2:メートルからインチ");
+            Console.WriteLine("＞");
+            int con = int.Parse(Console.ReadLine());        
+
+            Console.Write("はじめ：");
+            int start = int.Parse(Console.ReadLine());
+
+            Console.Write("終わり：");
+            int end = int.Parse(Console.ReadLine());
+
+
+            if (con == 1) {
+                PrintInchToMeterList(start, end);
+            } else {
+                PrintMeterToInchList(start, end);
             }
         }
+
+
+
+        static void PrintInchToMeterList(int start, int end) {
+            for (int inch = start; inch <= end; inch++) {
+                double meter = IntchConverter.ToMeter(inch);
+                Console.WriteLine($"{inch}inch = {meter:0.0000}m");
+            }
+        }
+        static void PrintMeterToInchList(int start, int end) {
+            for (int meter = start; meter <= end; meter++) {
+                double inch = IntchConverter.ToMeter(meter);
+                Console.WriteLine($"{meter}meter = {inch:0.0000}inch");
+            }
+        }
+
     }
 }
+
 
