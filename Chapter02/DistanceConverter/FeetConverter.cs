@@ -10,7 +10,6 @@ namespace DistanceConverter {
 
         //定数
         private const double ratio = 0.3048;
-
         //メートルからフィートを求める
         public　static double FromMeter(double meter) {
             return meter / ratio;
