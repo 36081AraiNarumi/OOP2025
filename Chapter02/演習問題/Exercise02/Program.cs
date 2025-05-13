@@ -6,8 +6,8 @@ namespace Exercise02 {
     class Program {
         static void Main(string[] args) {
 
-            Console.WriteLine("1:インチからメートル");
-            Console.WriteLine("2:メートルからインチ");
+            Console.WriteLine("1:ヤードからメートル");
+            Console.WriteLine("2:メートルからヤード");
             Console.WriteLine("＞");
             int con = int.Parse(Console.ReadLine());        
 
