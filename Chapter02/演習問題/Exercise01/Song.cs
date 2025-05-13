@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Exercise01 {
     //2.1.1
     public class Song {
-        public string title { get; private set; } = String.Empty;
-        public string artistName { get; set; } = String.Empty;
-        public int length { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string ArtistName { get; set; } = string.Empty;
+        public int Length { get; set; }
 
-        public Song(string Title, string ArtistName, int Length) {
+        public Song(string title, string artistName, int length) {
             Title = title;
             ArtistName = artistName;
             Length = length;
