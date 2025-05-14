@@ -18,6 +18,8 @@ namespace Exercise01 {
 
         }
 
+        public Song() {
+        }
     }
     
 
