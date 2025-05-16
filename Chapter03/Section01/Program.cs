@@ -4,34 +4,22 @@ namespace Section01 {
     internal class Program {
         public delegate bool Judgement(int value); //
         static void Main(string[] args) {
+            var cities = new List<string> {
+                "Tokyo",
+                "New Delhi",
+                "Bangkok",
+                "London",
+                "Paris",
+                "Berlin",
+                "Canberra",
+                "Hong Kong",
+            };
 
-           
+            var lowerList = cities.ConvertAll(s => s.ToUpper());
+            lowerList.ForEach(s => Console.WriteLine(s));
 
-
-          //  Console.WriteLine("カウントしたい数値：");
-           // int num = int.Parse(Console.ReadLine());
-
-            var numbers = new[] { 5, 3, 9, 6, 7, 5, 8, 1, 0, 5, 10, 4 };
-
-          //  Judgement judge = IsEven;
-            Console.WriteLine(Count( numbers, n=> 5 <= n && n<10));
         }
 
-        //メソッドへ渡す処理
-        // static bool IsEven(int n) {
-        //   return n % 2 == 1;
 
-        //  }
-        static int Count(int[] numbers, Predicate<int> judge) {
-            
-            var count = 0;
-            //引数で受け取ったメソッドを呼び出す
-            foreach (var n in numbers) {
-                if(judge(n) == true) {
-                    count++;
-                }
-            }
-            return count;
-        }
     }
 }
