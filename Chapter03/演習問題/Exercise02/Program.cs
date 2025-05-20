@@ -32,22 +32,19 @@ namespace Exercise02 {
         private static void Exercise2_1(List<string> names) {
             Console.WriteLine("都市名を入力。空行で終了");
             do {
-
-
-
                 var name = Console.ReadLine();
                 if (string.IsNullOrEmpty(name))
                     break;
                 int index = names.FindIndex(s => s.Equals(name));
                 Console.WriteLine(index);
-            } while (true);
-
-                       
+            } while (true);              
         }
 
         private static void Exercise2_2(List<string> names) {
-            
-
+            //ヒント
+            //names.Count(ここにラムダ式を記述する)
+            var count = names.Count(s => s.Contains("o"));
+            Console.WriteLine(count);
         }
 
         private static void Exercise2_3(List<string> names) {
