@@ -41,18 +41,26 @@ namespace Exercise02 {
         }
 
         private static void Exercise2_2(List<string> names) {
-            //ヒント
-            //names.Count(ここにラムダ式を記述する)
             var count = names.Count(s => s.Contains("o"));
             Console.WriteLine(count);
         }
 
         private static void Exercise2_3(List<string> names) {
+            var selected = names.Where(s => s.Contains('o')).ToArray();
+            foreach (var name in selected) {
+                Console.WriteLine(name);
+            }
 
         }
 
         private static void Exercise2_4(List<string> names) {
+            var obj = names.Where(s => s.StartsWith('B'))
+                .Select(s => new {s, s.Length});
 
+            foreach (var date in obj) {
+                Console.WriteLine(date.s + ":");
+
+            }
         }
     }
 }
