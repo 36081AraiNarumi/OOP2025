@@ -17,19 +17,20 @@ namespace Exercise01 {
         //5.1.2
         //設定されている西暦が21世紀か判断する
         //Yearが2001～2100年の間ならtrue,それ以外ならfalseを返す
-        public bool Is21Century=>
-            if (true)
-	{
-
-	}
-
-
-
+        public bool Is21Century {
+            get {
+                return Year >= 2001 && Year <= 2100;
+            }
+        }
         //4.1.3
         public YearMonth AddOneMonth() {
+            if (Mouth == 12) {
+                return new YearMonth(Year, )
 
+            }
         }
-        //4.1.4
+        //4
+        //.1.4
         public override string ToString() =>
             
         
