@@ -6,6 +6,7 @@ namespace Exercise01 {
 
             Exercise1(text);
             Console.WriteLine();
+            
 
             Exercise2(text);
 
