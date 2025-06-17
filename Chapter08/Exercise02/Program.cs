@@ -8,7 +8,8 @@
             abbrs.Add("IOC", "国際オリンピック委員会");
             abbrs.Add("NPT", "核兵器不拡散条約");
 
-            // Getメソッドの利用例
+            // 8.2.3(Countの呼び出し例)
+            //上のAddメソッドで、２つのオブジェクトを追加しているので、読み込んだたん号数+2が、Countの値になる。
             var names = new[] { "WHO", "FIFA", "NPT", };
             foreach (var name in names) {
                 var fullname = abbrs.Get(name);
@@ -19,6 +20,12 @@
                 }
             }
             Console.WriteLine();
+
+
+
+
+            //8.2.4
+            var query = abbrs.Where(char => x.Key.Length == 3);
 
             // ToAbbreviationメソッドの利用例
             var japanese = "東南アジア諸国連合";
