@@ -28,10 +28,10 @@
         public IDictionary<string, int> GetPerStudentScore() {
             var dict = new SortedDictionary<string, int>();
             foreach (var student in _score) {
-                if (dict.ContainsKey(student.Name)) {
-                    dict[student.Name] += student.Score;
+                if (dict.ContainsKey(student.Subject)) {
+                    dict[student.Subject] += student.Score;
                 } else {
-                    dict[student.Name] = student.Score;
+                    dict[student.Subject] = student.Score;
                 }
             }
             return dict;
