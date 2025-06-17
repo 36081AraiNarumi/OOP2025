@@ -13,13 +13,13 @@ namespace SalesCalculator {
 
         //コンストラクタ
         public SalesCounter(List<Sale> sales) {
-            _sales = sales;
+            sales = sales;
         }
 
         //店舗別の売り上げを求める
         public Dictionary<string,int> GetPerStoreSales() {
             Dictionary<string, int> dict = new Dictionary<string, int>();
-            foreach (Sale sale in _sales) {
+            foreach (Sale sale in sales) {
                 if (dict.ContainsKey(sale.ShopName))
                     dict[sale.ShopName] += sale.Amount;
                 else
