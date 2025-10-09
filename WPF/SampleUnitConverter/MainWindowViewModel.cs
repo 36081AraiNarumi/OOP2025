@@ -1,22 +1,15 @@
 ﻿using System;
-
 using System.Collections.Generic;
-
 using System.Linq;
-
 using System.Text;
-
 using System.Threading.Tasks;
-
 using System.Windows.Input;
 
 namespace SampleUnitConverter {
-
     internal class MainWindowViewModel : ViewModel {
 
         //フィールド
-
-        private double metricValue;
+       private double metricValue;
         private double imperialValue;
 
         //▲で呼ばれるコマンド

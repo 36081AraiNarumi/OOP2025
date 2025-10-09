@@ -22,12 +22,13 @@
             <Button Width="40" Margin="4" Content="▲"
                     Command="{Binding ImperialUnitToMetric}"/>
             <Button Width="40" Margin="4" Content="▼"
-                    Command="{Binding MetricToImperialunit}"/>
-            
+                    Command="{Binding MetricToImperialUnit}"/>
+
+
         </StackPanel>
 
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="100" Margin="4" Text="{Binding MetricValue,StringFormat={}{0:N3}}"/>
+            <TextBox Width="100" Margin="4" Text="{Binding ImperialValue,StringFormat={}{0:N3}}"/>
             <ComboBox Width="80" Margin="4"
                       ItemsSource="{Binding Source={x:Static local:ImperialUnit.Units}}"
                       SelectedItem="{Binding CurrentImperialUnit}"/>
