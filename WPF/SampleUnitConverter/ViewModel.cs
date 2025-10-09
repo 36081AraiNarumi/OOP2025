@@ -7,17 +7,17 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace SampleUnitConverter {
-    public class ViewModel {
-        public class INotifyPropertyChanged {
-            public event PropertyChangedEventHandler PropertyChanged;
+    public class ViewModel : INotifyPropertyChanged {
 
-            protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        public event PropertyChangedEventHandler PropertyChanged;
 
-                //        if (this.PropertyChanged != null) {
-                //            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-                //        }
-            }
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+
+            //        if (this.PropertyChanged != null) {
+            //            this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            //        }
         }
+
     }
 }
