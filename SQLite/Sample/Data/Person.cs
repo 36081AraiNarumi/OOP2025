@@ -14,8 +14,7 @@ namespace Sample.Data {
 
         public string Phone { get; set; } = string.Empty;
 
-        public override string ToString() {
-            return $"{Id} {Name} {Phone}";
-        }
+        
+        
     }
 }

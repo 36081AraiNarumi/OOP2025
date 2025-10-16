@@ -13,44 +13,100 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Sample;
+namespace Sample {
 
-/// <summary>
-/// Interaction logic for MainWindow.xaml
-/// </summary>
-public partial class MainWindow : Window {
-    private List<Person> _persons = new List<Person>();
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window {
+        private List<Person> _persons = new List<Person>();
 
-    public MainWindow() {
-        InitializeComponent();
-        //ReadDatebase();
-        _persons.Add(new Person { Id = 1, Name = "aaaa", Phone = "12345" });
-        PersonListView.ItemsSource = _persons;
-    }
+        public MainWindow() {
+            InitializeComponent();
+            ReadDatebase();
 
-    private void ReadDatebase() {
-        using (var connection = new SQLiteConnection(App.databasePath)) {
-            connection.CreateTable<Person>();
-            PersonListView.ItemsSource = connection.Table<Person>().ToList();
+            PersonListView.ItemsSource = _persons;
         }
-    }
 
-    private void SaveButton_Click(object sender, RoutedEventArgs e) {
-        var person = new Person() {
-            Name = NameTextBox.Text,
-            Phone = PhoneTextBox.Text,
-        };
-     
-        using(var connection = new SQLiteConnection(App.databasePath)) {
-            connection.CreateTable<Person>();
-            connection.Insert(person);
+        private void ReadDatebase() {
+            using (var connection = new SQLiteConnection(App.databasePath)) {
+                connection.CreateTable<Person>();
+                _persons = connection.Table<Person>().ToList();
+            }
         }
-    }
 
-    private void ReadButton_Click(object sender, RoutedEventArgs e) {
+        private void SaveButton_Click(object sender, RoutedEventArgs e) {
+            var person = new Person() {
+                Name = NameTextBox.Text,
+                Phone = PhoneTextBox.Text,
+            };
 
+            using (var connection = new SQLiteConnection(App.databasePath)) {
+                connection.CreateTable<Person>();
+                connection.Insert(person);
+            }
+        }
 
-        _persons.Add(new Person { Id = 1, Name = "bbbbbb", Phone = "4567890" });
+        private void ReadButton_Click(object sender, RoutedEventArgs e) {
+
+            ReadDatebase();
+            PersonListView.ItemsSource = _persons;
+        }
+
+        private void DeleteButton_Click(object sender, RoutedEventArgs e) {
+            var item = PersonListView.SelectedItem as Person;
+            if (item == null) {
+                MessageBox.Show("行を選択してください");
+                return;
+            }
+
+            using (var connection = new SQLiteConnection(App.databasePath)) {
+                connection.CreateTable<Person>();
+                connection.Delete(item);
+                ReadDatebase();
+                PersonListView.ItemsSource = _persons;
+            }
+        }
+
+        //リストビューのフィルタリング
+        private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e) {
+            var filterList = _persons.Where(p => p.Name.Contains(SearchTextBox.Text));
+
+            PersonListView.ItemsSource = filterList;
+        }
+
+        //リストビューから1レコード選択
+        private void PersonListView_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            var selectedPerson = PersonListView.SelectedItem as Person;
+            if (selectedPerson is null) return;
+            NameTextBox.Text = selectedPerson.Name;
+            PhoneTextBox.Text = selectedPerson.Phone;
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e) {
+            var selectedPerson = PersonListView.SelectedItem as Person;
+            if (selectedPerson is null) return;
+
+            
+
+            using (var connection = new SQLiteConnection(App.databasePath)) {
+                connection.CreateTable<Person>();
+
+                var person = new Person() {
+                    Id = selectedPerson.Id,
+                    Name = NameTextBox.Text,
+                    Phone = PhoneTextBox.Text,
+                };
+
+                connection.Update(person);
+
+                ReadDatebase();
+                PersonListView.ItemsSource = _persons;
+
+            }
+
+        }    
+
         
     }
 }
