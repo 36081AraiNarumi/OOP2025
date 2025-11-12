@@ -1,11 +1,11 @@
 ﻿namespace Section01 {
     internal class Program {
         static void Main(string[] args) {
-            List<GrettingBase> list = new List<GrettingBase> {
+            List<IGretting> list = [
                 new GrettingMorning(),
                 new GrettingAfternoon(),
                 new GrettingEvening(),
-            };
+                ];
 
             foreach (var obj in list) {
                 string msg = obj.GetMessage();
@@ -15,15 +15,15 @@
     }
 
 
-    class GrettingMorning : GrettingBase {
-        public override string GetMessage() => "おはよう";
+    class GrettingMorning : IGretting {
+        public string GetMessage() => "おはよう";
     }
 
-    class GrettingAfternoon : GrettingBase {
-        public override string GetMessage() => "こんにちは";
+    class GrettingAfternoon : IGretting {
+        public string GetMessage() => "こんにちは";
     }
 
-    class GrettingEvening : GrettingBase {
-        public override string GetMessage() => "こんばんは";
+    class GrettingEvening : IGretting {
+        public string GetMessage() => "こんばんは";
     }
 }

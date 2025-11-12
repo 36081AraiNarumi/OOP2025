@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Section01 {
-    abstract class GrettingBase {
-        public virtual string GetMessage() => "";
+    interface IGretting {
+        string GetMessage() ;
 
     }
 }
