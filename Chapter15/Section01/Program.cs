@@ -1,10 +1,10 @@
 ﻿namespace Section01 {
     internal class Program {
         static void Main(string[] args) {
-            List<IGretting> list = [
-                new GrettingMorning(),
-                new GrettingAfternoon(),
-                new GrettingEvening(),
+            List<IGreeting> list = [
+                new GreetingMorning(),
+                new GreetingAfternoon(),
+                new GreetingEvening(),
                 ];
 
             foreach (var obj in list) {
@@ -14,16 +14,16 @@
         }
     }
 
-
-    class GrettingMorning : IGretting {
+    class GreetingMorning : IGreeting {
         public string GetMessage() => "おはよう";
     }
 
-    class GrettingAfternoon : IGretting {
+    class GreetingAfternoon: IGreeting {
         public string GetMessage() => "こんにちは";
     }
 
-    class GrettingEvening : IGretting {
-        public string GetMessage() => "こんばんは";
+    class GreetingEvening : IGreeting {
+        public  string GetMessage() => "こんばんは";
     }
+
 }
