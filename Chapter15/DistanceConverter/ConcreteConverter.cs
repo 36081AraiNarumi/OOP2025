@@ -30,4 +30,26 @@
         protected override double Ratio => 0.9144;
         public override string UnitName => "ヤード";
     }
+
+    public class MileConverter : ConverterBase {
+        public override bool IsMyUnit(string name) =>
+            name.ToLower() == "mile" || name == UnitName;
+
+        // 1マイル = 1609.344 m
+        protected override double Ratio => 1609.344;
+
+        public override string UnitName => "マイル";
+    }
+
+    public class KilometerConverter : ConverterBase {
+        public override bool IsMyUnit(string name) =>
+            name.ToLower() == "kilometer" ||
+            name.ToLower() == "km" ||
+            name == UnitName;
+
+        // 1km = 1000 m
+        protected override double Ratio => 1000.0;
+
+        public override string UnitName => "キロメートル";
+    }
 }

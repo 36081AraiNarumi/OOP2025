@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 
 namespace DistanceConverter {
     public class ConverterFactory {
-        // あらかじめインスタンスを生成し、配列に入れておく
+        // 利用可能な全単位をここに登録
         private readonly static ConverterBase[] _converters = {
             new MeterConverter(),
             new FeetConverter(),
             new YardConverter(),
-            new InchConverter()
+            new InchConverter(),
+            new MileConverter(),
+            new KilometerConverter()
         };
 
         public static ConverterBase? GetInstance(string name) =>

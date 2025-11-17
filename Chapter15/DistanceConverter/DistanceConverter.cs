@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DistanceConverter {
+﻿namespace DistanceConverter {
     public class DistanceConverter {
         public ConverterBase From { get; init; }
         public ConverterBase To { get; init; }
@@ -15,8 +9,8 @@ namespace DistanceConverter {
         }
 
         public double Convert(double value) {
-            var meter = From.ToMeter(value);    // メートルへ変換
-            return To.FromMeter(meter);         // メートルから目的の単位へ変換
+            var meter = From.ToMeter(value);  // メートルへ変換
+            return To.FromMeter(meter);       // メートルから目的の単位へ変換
         }
     }
 }
