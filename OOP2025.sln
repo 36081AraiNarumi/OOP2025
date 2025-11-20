@@ -221,6 +221,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceConverter", "Chapte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextFileProcessorDI", "Chapter15\TemplateMethod\TextFileProcessorDI\TextFileProcessorDI.csproj", "{D1742D0E-F027-4B06-9881-FD7FE47212C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tenki", "WPF\Tenki\Tenki.csproj", "{F48C375D-5838-492D-B31B-9A7D9E795B21}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -519,6 +521,10 @@ Global
 		{D1742D0E-F027-4B06-9881-FD7FE47212C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1742D0E-F027-4B06-9881-FD7FE47212C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1742D0E-F027-4B06-9881-FD7FE47212C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48C375D-5838-492D-B31B-9A7D9E795B21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48C375D-5838-492D-B31B-9A7D9E795B21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48C375D-5838-492D-B31B-9A7D9E795B21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48C375D-5838-492D-B31B-9A7D9E795B21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -613,6 +619,7 @@ Global
 		{8C5B10A0-5A8D-4439-9B74-08A53DAF453F} = {DC32E77E-26DD-442B-94A0-62DF1B960A78}
 		{2B70AF86-B9C5-4FFA-870F-E08F2718CB53} = {8C5B10A0-5A8D-4439-9B74-08A53DAF453F}
 		{D1742D0E-F027-4B06-9881-FD7FE47212C6} = {31A7BFF0-6DB1-4AC6-8C42-B8D42B2DE598}
+		{F48C375D-5838-492D-B31B-9A7D9E795B21} = {2E8E922F-3413-45B0-88C8-7E76CEFEC30F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A83ED87-5DC8-49CA-8723-6765A531CDD2}

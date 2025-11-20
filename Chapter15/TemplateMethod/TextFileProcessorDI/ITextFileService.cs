@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TextFileProcessorDI {
+﻿namespace TextFileProcessorDI {
     public interface ITextFileService {
         void Initialize(string name);
         void Execute(string line);
